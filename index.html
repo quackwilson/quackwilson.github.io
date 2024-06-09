@@ -240,8 +240,22 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="./asset/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <scrpit src="./asset/js/index.js"></scrpit>
 
+    <script>
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+        function toggleModalDarkMode() {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (prefersDarkScheme.matches) {
+                    modal.classList.add('dark-mode');
+                } else {
+                    modal.classList.remove('dark-mode');
+                }
+            });
+        }
+        window.onload = toggleModalDarkMode;
+        prefersDarkScheme.addEventListener('change', toggleModalDarkMode);
+    </script>
 </body>
 
 </html>
