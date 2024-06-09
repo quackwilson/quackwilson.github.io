@@ -1,0 +1,43 @@
+/* Light Mode Styles */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.jumbotron {
+    background-color: #f8f9fa;
+    color: #000000;
+}
+
+.card {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    .jumbotron {
+        background-color: #1c1c1c;
+        color: #ffffff;
+    }
+
+    .card {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+
+    .nav-tabs .nav-link.active {
+        background-color: #333333;
+        color: #ffffff;
+    }
+
+    .list-group-item {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+}
