@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>履歷表</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .language-toggle {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Language Toggle -->
+        <div class="text-right">
+            <span class="language-toggle" id="toggle-en">English</span> | 
+            <span class="language-toggle" id="toggle-zh">中文</span>
+        </div>
+
+        <!-- Header -->
+        <div class="jumbotron text-center">
+            <h1 id="name">你的名字</h1>
+            <p id="tagline">你的職位或標語</p>
+        </div>
+
+        <!-- Basic Information -->
+        <div class="row">
+            <div class="col-md-6">
+                <h3 id="basic-info-title">基本信息</h3>
+                <ul class="list-unstyled">
+                    <li><strong id="email-label">電子郵件：</strong> <span id="email">your-email@example.com</span></li>
+                    <li><strong id="phone-label">電話：</strong> <span id="phone">123-456-7890</span></li>
+                    <li><strong id="address-label">地址：</strong> <span id="address">123 Main St, City, Country</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="mt-4">
+            <h3 id="education-title">教育背景</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h5 id="school">學校名稱</h5>
+                    <p><strong id="degree-label">學位：</strong> <span id="degree">學士/碩士/博士</span></p>
+                    <p><strong id="major-label">專業：</strong> <span id="major">你的專業</span></p>
+                    <p><strong id="edu-year-label">年份：</strong> <span id="edu-years">開始年份 - 結束年份</span></p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="mt-4">
+            <h3 id="work-exp-title">工作經驗</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h5 id="company">公司名稱</h5>
+                    <p><strong id="position-label">職位：</strong> <span id="position">你的職位</span></p>
+                    <p><strong id="work-year-label">年份：</strong> <span id="work-years">開始年份 - 結束年份</span></p>
+                    <p><strong id="work-desc-label">工作內容：</strong> <span id="work-desc">簡要描述你的工作內容和成就。</span></p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Projects -->
+        <div class="mt-4">
+            <h3 id="projects-title">專案</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h5 id="project1-title">專案1名稱</h5>
+                    <p><strong id="project1-desc-label">描述：</strong> <span id="project1-desc">專案1的描述。</span></p>
+                </li>
+                <li class="list-group-item">
+                    <h5 id="project2-title">專案2名稱</h5>
+                    <p><strong id="project2-desc-label">描述：</strong> <span id="project2-desc">專案2的描述。</span></p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Skills -->
+        <div class="mt-4">
+            <h3 id="skills-title">技能</h3>
+            <ul class="list-group">
+                <li class="list-group-item" id="skill1">技能1</li>
+                <li class="list-group-item" id="skill2">技能2</li>
+                <li class="list-group-item" id="skill3">技能3</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-5">
+            <p>&copy; 2024 <span id="footer-name">你的名字</span>. <span id="footer-rights">保留所有權利。</span></p>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const translations = {
+            en: {
+                name: "Your Name",
+                tagline: "Your Position or Tagline",
+                basicInfoTitle: "Basic Information",
+                emailLabel: "Email:",
+                phoneLabel: "Phone:",
+                addressLabel: "Address:",
+                educationTitle: "Education",
+                school: "School Name",
+                degreeLabel: "Degree:",
+                majorLabel: "Major:",
+                eduYearLabel: "Years:",
+                workExpTitle: "Work Experience",
+                company: "Company Name",
+                positionLabel: "Position:",
+                workYearLabel: "Years:",
+                workDescLabel: "Description:",
+                projectsTitle: "Projects",
+                project1Title: "Project 1 Title",
+                project1DescLabel: "Description:",
+                project1Desc: "Description of Project 1.",
+                project2Title: "Project 2 Title",
+                project2DescLabel: "Description:",
+                project2Desc: "Description of Project 2.",
+                skillsTitle: "Skills",
+                skill1: "Skill 1",
+                skill2: "Skill 2",
+                skill3: "Skill 3",
+                footerRights: "All rights reserved."
+            },
+            zh: {
+                name: "你的名字",
+                tagline: "你的職位或標語",
+                basicInfoTitle: "基本信息",
+                emailLabel: "電子郵件：",
+                phoneLabel: "電話：",
+                addressLabel: "地址：",
+                educationTitle: "教育背景",
+                school: "學校名稱",
+                degreeLabel: "學位：",
+                majorLabel: "專業：",
+                eduYearLabel: "年份：",
+                workExpTitle: "工作經驗",
+                company: "公司名稱",
+                positionLabel: "職位：",
+                workYearLabel: "年份：",
+                workDescLabel: "工作內容：",
+                projectsTitle: "專案",
+                project1Title: "專案1名稱",
+                project1DescLabel: "描述：",
+                project1Desc: "專案1的描述。",
+                project2Title: "專案2名稱",
+                project2DescLabel: "描述：",
+                project2Desc: "專案2的描述。",
+                skillsTitle: "技能",
+                skill1: "技能1",
+                skill2: "技能2",
+                skill3: "技能3",
+                footerRights: "保留所有權利。"
+            }
+        };
+
+        $(document).ready(function() {
+            $('#toggle-en').click(function() {
+                setLanguage('en');
+            });
+
+            $('#toggle-zh').click(function() {
+                setLanguage('zh');
+            });
+
+            function setLanguage(lang) {
+                $('#name').text(translations[lang].name);
+                $('#tagline').text(translations[lang].tagline);
+                $('#basic-info-title').text(translations[lang].basicInfoTitle);
+                $('#email-label').text(translations[lang].emailLabel);
+                $('#phone-label').text(translations[lang].phoneLabel);
+                $('#address-label').text(translations[lang].addressLabel);
+                $('#education-title').text(translations[lang].educationTitle);
+                $('#school').text(translations[lang].school);
+                $('#degree-label').text(translations[lang].degreeLabel);
+                $('#major-label').text(translations[lang].majorLabel);
+                $('#edu-year-label').text(translations[lang].eduYearLabel);
+                $('#work-exp-title').text(translations[lang].workExpTitle);
+                $('#company').text(translations[lang].company);
+                $('#position-label').text(translations[lang].positionLabel);
+                $('#work-year-label').text(translations[lang].workYearLabel);
+                $('#work-desc-label').text(translations[lang].workDescLabel);
+                $('#projects-title').text(translations[lang].projectsTitle);
+                $('#project1-title').text(translations[lang].project1Title);
+                $('#project1-desc-label').text(translations[lang].project1DescLabel);
+                $('#project1-desc').text(translations[lang].project1Desc);
+                $('#project2-title').text(translations[lang].project2Title);
+                $('#project2-desc-label').text(translations[lang].project2DescLabel);
+                $('#project2-desc').text(translations[lang].project2Desc);
+                $('#skills-title').text(translations[lang].skillsTitle);
+                $('#skill1').text(translations[lang].skill1);
+                $('#skill2').text(translations[lang].skill2);
+                $('#skill3').text(translations[lang].skill3);
+                $('#footer-rights').text(translations[lang].footerRights);
+                $('#footer-name').text(translations[lang].name);
+            }
+
+            // Set default language to Chinese
+            setLanguage('zh');
+        });
+    </script>
+</body>
+</html>
