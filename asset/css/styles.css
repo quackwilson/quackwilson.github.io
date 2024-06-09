@@ -41,3 +41,24 @@ body {
         color: #ffffff;
     }
 }
+
+.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .modal-header {
+    border-bottom: 1px solid #333333;
+}
+
+.dark-mode .modal-footer {
+    border-top: 1px solid #333333;
+}
+
+.dark-mode .close {
+    color: #ffffff;
+}
+
+.dark-mode p {
+    color: #ffffff;
+}
