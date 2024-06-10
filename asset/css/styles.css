@@ -14,6 +14,11 @@ body {
     color: #000000;
 }
 
+.card-line {
+    border-top: 1px solid #000000;
+    margin: 0 15px; /* Adjust the margin to create space on both ends */
+}
+
 /* Dark Mode Styles */
 @media (prefers-color-scheme: dark) {
     body {
@@ -39,6 +44,11 @@ body {
     .list-group-item {
         background-color: #1e1e1e;
         color: #ffffff;
+    }
+
+    .card-line {
+        border-top: 1px solid #ffffff;
+        margin: 0 15px; /* Adjust the margin to create space on both ends */
     }
 }
 
